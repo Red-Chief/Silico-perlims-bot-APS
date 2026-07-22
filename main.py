@@ -3,7 +3,7 @@ from action import Attack, Critical, Heal
 
 class Bot:
 
-    NAME = "Example"
+    NAME = "Asteral"
 
     STATS = {
         "health": 8,
