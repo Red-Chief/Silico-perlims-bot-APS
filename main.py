@@ -7,8 +7,8 @@ class Bot:
 
     STATS = {
         "health": 8,
-        "attack": 5,
-        "critical": 3,
+        "attack": 8,
+        "critical": 0,
         "heal": 4
     }
 
