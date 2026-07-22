@@ -7,9 +7,9 @@ class Bot:
 
     STATS = {
         "health": 8,
-        "attack": 8,
+        "attack": 4,
         "critical": 0,
-        "heal": 4
+        "heal": 8
     }
 
     FRIENDS = []
@@ -27,17 +27,17 @@ class Bot:
         if not enemies:
             return Heal()
 
-        if me["health"] <= 9:
+        if me["health"] <= 10:
             return Heal()
 
         for p in sorted(enemies, key=lambda x: x["health"]):
-            if p["health"] <= 9:
+            if p["health"] <= 6:
                 return Attack(p["name"])
 
-        if me["critical_left"]:
-            for p in sorted(enemies, key=lambda x: x["health"]):
-                if p["health"] <= 14:
-                    return Critical(p["name"])
+        # if me["critical_left"]:
+        #     for p in sorted(enemies, key=lambda x: x["health"]):
+        #         if p["health"] <= 14:
+        #             return Critical(p["name"])
 
         if state["ffa"]:
             target = min(enemies, key=lambda x: x["health"])
